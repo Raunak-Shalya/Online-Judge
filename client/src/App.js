@@ -1,13 +1,18 @@
-import './App.css';
+import NavBar from './components/NavBar';
+import Loginpage from './components/loginpage.js';
+import {Route, Routes} from 'react-router-dom';
+import './styles/App.css';
+import Homepage from './components/homepage.js';
 
 function App() {
   return (
-    <div className="App">
-      <h1> Online Judge</h1>
-      <a href='/auth/google'>
-      <button> login with google</button>
-      </a>
-    </div>
+    <>
+    <NavBar />
+    <Routes>
+    <Route exact path='/login' element={<Loginpage />}/>
+      <Route path='/homepage' element={<Homepage/>}/>
+    </Routes>
+    </>
   );
 }
 
