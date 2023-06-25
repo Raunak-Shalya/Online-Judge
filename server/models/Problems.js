@@ -1,6 +1,6 @@
 const mongoose=require("mongoose")
 
-const fileScheman=new mongoose.Schema({
+const fileSchema=new mongoose.Schema({
   Pid:{
     type:String,
     required:true
@@ -19,6 +19,6 @@ const fileScheman=new mongoose.Schema({
   },
 })
 
-const File=new mongoose.model('file',fileScheman)
+const File=new mongoose.model('file',fileSchema)
 
-export default File;
+module.exports=File;

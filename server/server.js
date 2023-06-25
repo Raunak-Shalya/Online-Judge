@@ -3,7 +3,7 @@ const passport=require('passport')
 const cors = require('cors')
 const path=require('path')
 const app=express();
-const { default: router } = require('../Routes');
+const dbmodel=require('./models/Problems')
 require('./auth');
 
 app.use(express.json());
@@ -13,8 +13,7 @@ app.use(cors());
 var session = require('express-session');
 
 
-const DB=require('./databases/Problems.js')
-DB.DBConnection();
+
 
 
   app.use(session({
@@ -43,6 +42,15 @@ app.get(
   }
 );
 
+
+const DB=require('./databases/Problems.js')
+DB.DBConnection();
+
+const fetchproblems=require('./fetchdata/Problems');
+
+app.get('/homepage', (req,res)=>{
+  res.send(fetchproblems())
+});
 
 
 app.listen(5000, ()=>{
