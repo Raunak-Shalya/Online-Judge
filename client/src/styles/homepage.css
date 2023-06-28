@@ -1,0 +1,23 @@
+.body{
+    background-image: url('../res/HomePage_Background.jpg');
+    height: 91.3vh;
+    width: 100%;
+}
+
+.problemscontainer{
+    padding-top: 10vh;
+}
+.problemcontainer{
+   background-color: rgb(14,14,14);
+   display: flex;
+   justify-content: space-between;
+   height: 5vh;
+   color: white;
+   padding: 0vw 4vw 0vw 9vw;
+   margin-top: 0.2vh;
+   border-radius: 25px;
+}
+
+.problemcontainer:hover{
+ background-color: rgb(36,36,36);
+}

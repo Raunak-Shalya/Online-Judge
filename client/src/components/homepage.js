@@ -15,21 +15,23 @@ const Homepage = () => {
     }
   },[])
   return (
-    <>
-    <Navbar/>
     <div>
-    {problems.map((problem)=>{
+    <Navbar/>
+    <div className='body'>
+      <div className='problemscontainer'>
+      {problems.map((problem)=>{
       const { Pid, PS, D } = problem;
       return(
-        <>
-          <h>{Pid}</h>
-          <h1>{PS}</h1>
+        <div className='problemcontainer'> 
+          <a>{Pid}</a>
+          <a>{PS}</a>
           <a>{D}</a>
-        </>
+        </div>
       )
       })}
+      </div>
     </div>
-    </>
+    </div>
   )
 }
 
