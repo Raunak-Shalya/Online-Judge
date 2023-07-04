@@ -1,0 +1,44 @@
+.page{
+    background-image: url('../res/HomePage_Background.jpg');
+    height: 91.4vh;
+}
+.lefthalf{
+    height: 20px;
+    width: 45vw;
+}
+
+.PS{
+    color: whitesmoke;
+    font-size: xx-large;
+    padding-left: 0;
+}
+
+.PD{
+    color: white;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.righthalf{
+    margin-left: 50vw;
+    height: 88vh;
+}
+.texteditor{
+   width: 48vw;
+   height: 80vh;
+   color: white;
+   resize: none;
+   border: solid 1px white;
+   background-color: rgb(50,54,62);
+   ;
+}
+
+.submitbutton{
+    background-color: rgb(17,24,39);
+    color: white;
+    height: 40px;
+    width: 100px;
+    margin-left: 20vw;
+    border-radius: 8px;
+}
+

@@ -1,17 +1,29 @@
 import React from 'react';
 import Navbar from './NavBar';
 import { useLocation } from 'react-router';
+import '../styles/problem.css'
 
-const Problem = ({ Pid, PS, D, PD }) => {
-  // const location=useLocation();
-  // const {problem}=location.state;
-  // const { PS } = problem;
-
+const Problem = () => {
+   const Location=useLocation();
+  const problem=Location.state;
+  const { Pid, PS, D, PD } = problem;
+  console.log(PD);
+  function replaceWithBr() {
+    return PD.replace(/\\n/g,"<br />")
+  }
   return (
     <>
-      <div>
-        {PS}
+    <Navbar/>
+    <div className='page'>
+      <div className='lefthalf'>
+        <h1 className='PS'>{Pid}. {PS}</h1>
+        <p className='PD' dangerouslySetInnerHTML={{__html: replaceWithBr()}} />
       </div>
+      <div className='righthalf'>
+        <textarea className='texteditor'>*Enter Code here*</textarea>
+        <button className='submitbutton'>Submit</button>
+      </div>
+    </div>
     </>
   );
 };
