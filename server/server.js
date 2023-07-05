@@ -30,9 +30,11 @@ DB.DBConnection();
 
 const authrouter=require('./Routes/auth');
 const getproblemserouter=require('./Routes/getproblems');
+const submitrouter=require('./Routes/submit')
 
 app.use('/getproblems',getproblemserouter);
 app.use('/auth',authrouter);
+app.use('/submit',submitrouter)
 
 app.listen(5000, ()=>{
     console.log("Listening on port 5000");
