@@ -16,7 +16,7 @@
       curcode=event.target.value;
     }
     const onClickSubmitHandler=()=>{
-      axios.post("http://localhost:5000/submit",{language:'cpp',code:curcode})
+      axios.post("http://localhost:5000/submit",{language:'cpp',code:curcode,Pid:Pid})
       .then(console.log('code submitted'))
     }
     return (

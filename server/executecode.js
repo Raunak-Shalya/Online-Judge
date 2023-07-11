@@ -8,11 +8,12 @@ if (!fs.existsSync(outputPath)) {
   fs.mkdirSync(outputPath, { recursive: true });
 }
 
-const executeCpp = (filepath) => {
+const executeCpp = (filepath,Testcases) => {
   const jobId = path.basename(filepath).split(".")[0];
   const outPath = path.join(outputPath, `${jobId}.out`);
  const child = execSync (
       `g++ ${filepath} -o ${outPath} && cd ${outputPath} && ${jobId}.out`,
+      { input:Testcases },
       (error, stdout, stderr) => {
         error && reject({ error, stderr });
         stderr && reject(stderr);
