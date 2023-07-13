@@ -16,16 +16,17 @@ router.post('/',async(req,res)=>{
         IP=IP.replaceAll('\\n','\n')
         OP=OP.replaceAll('\\n',' ')
         const codepath=await generateFile(language,code);
-        const output=executeCpp(codepath,IP);
-      //   console.log(output);
-      //   console.log(OP);
-        if(OP==output){
-         console.log("match");
-         res.send("Accepted");
+        try{
+         const output=executeCpp(codepath,IP);
+         if(OP==output){
+            res.send("Accepted");
+         }
+         else{
+            res.send("Wrong Answer");
+         }
         }
-        else{
-         console.log("error no match")
-         res.json(output);
+        catch(e){
+          res.send("Compilation Error");
         }
      }
 })

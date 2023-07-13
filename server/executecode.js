@@ -1,6 +1,7 @@
 const { execSync } = require("child_process");
 const fs = require("fs");
 const path = require("path");
+const { stdout } = require("process");
 
 const outputPath = path.join(__dirname, "outputs");
 
