@@ -15,10 +15,20 @@
     const updateCode=(event)=>{
       curcode=event.target.value;
     }
-    const onClickSubmitHandler=()=>{
-      axios.post("http://localhost:5000/submit",{language:'cpp',code:curcode,Pid:Pid})
-      .then(console.log('code submitted'))
-    }
+    const onClickSubmitHandler = async () => {
+      try {
+          const response = await axios.post("http://localhost:5000/submit", {
+              language: 'cpp',
+              code: curcode,
+              Pid: Pid
+          });
+          console.log(response);
+          console.log('code submitted');
+          
+      } catch (error) {
+          console.log(error);
+      }
+  };
     return (
       <>
       <Navbar/>
