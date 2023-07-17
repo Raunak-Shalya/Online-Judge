@@ -5,10 +5,10 @@ import profilepic from '../res/Profilepic.png'
 import ojicon from '../res/OJ Icon.png'
 
 const navigation = [
-  { name: 'Dashboard', href: '', current: true },
-  { name: 'Team', href: '', current: false },
-  { name: 'Projects', href: '', current: false },
-  { name: 'Calendar', href: '', current: false },
+  { name: 'Dashboard', href: '/homepage', current: true },
+  { name: 'GitHub', href: 'https://github.com/Raunak-Shalya/Online-Judge', current: false },
+  // { name: 'Projects', href: '', current: false },
+  // { name: 'Calendar', href: '', current: false },
 ]
 
 function classNames(...classes) {
@@ -118,7 +118,7 @@ export default function Example() {
                       <Menu.Item>
                         {({ active }) => (
                           <a
-                            href="#"
+                            href="http://localhost:5000/logout"
                             className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
                           >
                             Sign out

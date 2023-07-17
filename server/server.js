@@ -36,6 +36,12 @@ app.use('/getproblems',getproblemserouter);
 app.use('/auth',authrouter);
 app.use('/submit',submitrouter)
 
+app.get('/logout',(req,res)=>{
+  req.session.destroy((err) => {
+    res.redirect('http://localhost:3000/login') // will always fire after session is destroyed
+  })
+})
+
 app.listen(5000, ()=>{
     console.log("Listening on port 5000");
 })
