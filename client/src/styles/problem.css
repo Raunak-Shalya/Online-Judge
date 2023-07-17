@@ -38,7 +38,37 @@
     color: white;
     height: 40px;
     width: 100px;
-    margin-left: 20vw;
+    margin-left: 10vw;
     border-radius: 8px;
 }
 
+
+.gVerdict {
+    margin-left: 15vw;
+    color: white;
+    font-weight: 500;
+    background-color: rgb(44,188,99);
+    height: 40px;
+    width: 150px;
+    border-radius: 10px;
+}
+
+.noVerdict{
+    margin-left: 15vw;
+    color: white;
+    font-weight: 500;
+    background-color: rgb(77,88,80);
+    height: 40px;
+    width: 150px;
+    border-radius: 10px;
+}
+
+.rVerdict{
+    margin-left: 15vw;
+    color: white;
+    font-weight: 500;
+    background-color: #B3240D;
+    height: 40px;
+    width: 150px;
+    border-radius: 10px;
+}

@@ -4,10 +4,15 @@
   import '../styles/problem.css'
   import axios from 'axios';
   const Problem = () => {
+
     const Location=useLocation();
     const problem=Location.state;
+
     const { Pid, PS, D, PD } = problem;
+
     let curcode='';
+    const [verdict,setVerdict]=useState('');
+
     function replaceWithBr() {
       return PD.replace(/\\n/g,"<br />")
     }
@@ -22,13 +27,21 @@
               code: curcode,
               Pid: Pid
           });
-          console.log(response);
+          setVerdict(response.data);
           console.log('code submitted');
           
       } catch (error) {
           console.log(error);
       }
   };
+  const verdictButton=()=>{
+    if(verdict=='')
+    return <button className='noVerdict'>Verdict</button>
+    else if(verdict=='Accepted')
+    return <button className='gVerdict'>Accepted</button>
+    else
+    return <button className='rVerdict'>{verdict}</button>
+  }
     return (
       <>
       <Navbar/>
@@ -39,7 +52,8 @@
         </div>
         <div className='righthalf'>
           <textarea className='texteditor' onChange={updateCode}>*Enter Code here*</textarea>
-          <button className='submitbutton' onClick={onClickSubmitHandler}>Submit</button>
+          <button className='submitbutton' onClick={onClickSubmitHandler}>Submit_&gt;</button>
+           {verdictButton()}
         </div>
       </div>
       </>
