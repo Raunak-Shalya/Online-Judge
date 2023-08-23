@@ -1,10 +1,14 @@
 .page{
     background-image: url('../res/HomePage_Background.jpg');
     height: 91.4vh;
+    position: relative;
+  height: 100vh;
+  overflow: hidden;
 }
 .lefthalf{
     height: 20px;
     width: 45vw;
+    margin-left: 1vw;
 }
 
 .PS{
@@ -28,9 +32,7 @@
    height: 80vh;
    color: white;
    resize: none;
-   border: solid 1px white;
-   background-color: rgb(50,54,62);
-   ;
+   line-height: 1.4;
 }
 
 .submitbutton{
@@ -72,3 +74,4 @@
     width: 150px;
     border-radius: 10px;
 }
+

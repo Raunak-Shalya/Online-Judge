@@ -3,6 +3,7 @@
   import { useLocation } from 'react-router';
   import '../styles/problem.css'
   import axios from 'axios';
+  import Editor, { DiffEditor, useMonaco, loader } from '@monaco-editor/react';
   const Problem = () => {
 
     const Location=useLocation();
@@ -10,15 +11,15 @@
 
     const { Pid, PS, D, PD } = problem;
 
-    let curcode='';
+    let curcode='Type your code here';
     const [verdict,setVerdict]=useState('');
 
     function replaceWithBr() {
       return PD.replace(/\\n/g,"<br />")
     }
     
-    const updateCode=(event)=>{
-      curcode=event.target.value;
+    const updateCode=(value,event)=>{
+      curcode=value;
     }
     const onClickSubmitHandler = async () => {
       try {
@@ -51,7 +52,7 @@
           <p className='PD' dangerouslySetInnerHTML={{__html: replaceWithBr()}} />
         </div>
         <div className='righthalf'>
-          <textarea className='texteditor' onChange={updateCode}>*Enter Code here*</textarea>
+          <Editor height='80' className='texteditor' theme='vs-dark' defaultLanguage='cpp' defaultValue={curcode} onChange={updateCode}></Editor>
           <button className='submitbutton' onClick={onClickSubmitHandler}>Submit_&gt;</button>
            {verdictButton()}
         </div>
